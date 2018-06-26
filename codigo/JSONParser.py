@@ -5,29 +5,33 @@ from io import StringIO
 from typing.io import TextIO
 import sys
 
+
+p = lambda x: print(x, end = '')
+
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16")
-        buf.write(":\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\3")
+        buf.write("A\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\3")
         buf.write("\3\3\3\3\3\3\7\3\23\n\3\f\3\16\3\26\13\3\3\3\3\3\3\3\3")
-        buf.write("\3\5\3\34\n\3\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\7\5&\n\5")
-        buf.write("\f\5\16\5)\13\5\3\5\3\5\3\5\3\5\5\5/\n\5\3\6\3\6\3\6\3")
-        buf.write("\6\3\6\3\6\3\6\5\68\n\6\3\6\2\2\7\2\4\6\b\n\2\2\2>\2\f")
-        buf.write("\3\2\2\2\4\33\3\2\2\2\6\35\3\2\2\2\b.\3\2\2\2\n\67\3\2")
-        buf.write("\2\2\f\r\5\n\6\2\r\3\3\2\2\2\16\17\7\3\2\2\17\24\5\6\4")
-        buf.write("\2\20\21\7\4\2\2\21\23\5\6\4\2\22\20\3\2\2\2\23\26\3\2")
-        buf.write("\2\2\24\22\3\2\2\2\24\25\3\2\2\2\25\27\3\2\2\2\26\24\3")
-        buf.write("\2\2\2\27\30\7\5\2\2\30\34\3\2\2\2\31\32\7\3\2\2\32\34")
-        buf.write("\7\5\2\2\33\16\3\2\2\2\33\31\3\2\2\2\34\5\3\2\2\2\35\36")
-        buf.write("\7\f\2\2\36\37\7\6\2\2\37 \5\n\6\2 \7\3\2\2\2!\"\7\7\2")
-        buf.write("\2\"\'\5\n\6\2#$\7\4\2\2$&\5\n\6\2%#\3\2\2\2&)\3\2\2\2")
-        buf.write("\'%\3\2\2\2\'(\3\2\2\2(*\3\2\2\2)\'\3\2\2\2*+\7\b\2\2")
-        buf.write("+/\3\2\2\2,-\7\7\2\2-/\7\b\2\2.!\3\2\2\2.,\3\2\2\2/\t")
-        buf.write("\3\2\2\2\608\7\f\2\2\618\7\r\2\2\628\5\4\3\2\638\5\b\5")
-        buf.write("\2\648\7\t\2\2\658\7\n\2\2\668\7\13\2\2\67\60\3\2\2\2")
-        buf.write("\67\61\3\2\2\2\67\62\3\2\2\2\67\63\3\2\2\2\67\64\3\2\2")
-        buf.write("\2\67\65\3\2\2\2\67\66\3\2\2\28\13\3\2\2\2\7\24\33\'.")
-        buf.write("\67")
+        buf.write("\3\3\3\3\3\5\3\36\n\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5")
+        buf.write("\3\5\3\5\3\5\7\5+\n\5\f\5\16\5.\13\5\3\5\3\5\3\5\3\5\5")
+        buf.write("\5\64\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6?\n\6")
+        buf.write("\3\6\2\2\7\2\4\6\b\n\2\2\2E\2\f\3\2\2\2\4\35\3\2\2\2\6")
+        buf.write("\37\3\2\2\2\b\63\3\2\2\2\n>\3\2\2\2\f\r\5\n\6\2\r\3\3")
+        buf.write("\2\2\2\16\17\7\3\2\2\17\24\5\6\4\2\20\21\7\4\2\2\21\23")
+        buf.write("\5\6\4\2\22\20\3\2\2\2\23\26\3\2\2\2\24\22\3\2\2\2\24")
+        buf.write("\25\3\2\2\2\25\27\3\2\2\2\26\24\3\2\2\2\27\30\7\5\2\2")
+        buf.write("\30\31\b\3\1\2\31\36\3\2\2\2\32\33\7\3\2\2\33\34\7\5\2")
+        buf.write("\2\34\36\b\3\1\2\35\16\3\2\2\2\35\32\3\2\2\2\36\5\3\2")
+        buf.write("\2\2\37 \7\f\2\2 !\7\6\2\2!\"\b\4\1\2\"#\5\n\6\2#\7\3")
+        buf.write("\2\2\2$%\b\5\1\2%&\7\7\2\2&,\5\n\6\2\'(\7\4\2\2()\b\5")
+        buf.write("\1\2)+\5\n\6\2*\'\3\2\2\2+.\3\2\2\2,*\3\2\2\2,-\3\2\2")
+        buf.write("\2-/\3\2\2\2.,\3\2\2\2/\60\7\b\2\2\60\64\3\2\2\2\61\62")
+        buf.write("\7\7\2\2\62\64\7\b\2\2\63$\3\2\2\2\63\61\3\2\2\2\64\t")
+        buf.write("\3\2\2\2\65\66\7\f\2\2\66?\b\6\1\2\678\7\r\2\28?\b\6\1")
+        buf.write("\29?\5\4\3\2:?\5\b\5\2;?\7\t\2\2<?\7\n\2\2=?\7\13\2\2")
+        buf.write(">\65\3\2\2\2>\67\3\2\2\2>9\3\2\2\2>:\3\2\2\2>;\3\2\2\2")
+        buf.write("><\3\2\2\2>=\3\2\2\2?\13\3\2\2\2\7\24\35,\63>")
         return buf.getvalue()
 
 
@@ -151,7 +155,7 @@ class JSONParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_obj)
         self._la = 0 # Token type
         try:
-            self.state = 25
+            self.state = 27
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
             if la_ == 1:
@@ -174,14 +178,16 @@ class JSONParser ( Parser ):
 
                 self.state = 21
                 self.match(JSONParser.T__2)
+                print('')
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 23
-                self.match(JSONParser.T__0)
                 self.state = 24
+                self.match(JSONParser.T__0)
+                self.state = 25
                 self.match(JSONParser.T__2)
+                p('{}')
                 pass
 
 
@@ -198,6 +204,7 @@ class JSONParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self._STRING = None # Token
 
         def STRING(self):
             return self.getToken(JSONParser.STRING, 0)
@@ -226,11 +233,12 @@ class JSONParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_pair)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 27
-            self.match(JSONParser.STRING)
-            self.state = 28
-            self.match(JSONParser.T__3)
             self.state = 29
+            localctx._STRING = self.match(JSONParser.STRING)
+            self.state = 30
+            self.match(JSONParser.T__3)
+            p((None if localctx._STRING is None else localctx._STRING.text)); p(':')
+            self.state = 32
             self.value()
         except RecognitionException as re:
             localctx.exception = re
@@ -273,36 +281,38 @@ class JSONParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_array)
         self._la = 0 # Token type
         try:
-            self.state = 44
+            self.state = 49
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 31
+                p('-')
+                self.state = 35
                 self.match(JSONParser.T__4)
-                self.state = 32
+                self.state = 36
                 self.value()
-                self.state = 37
+                self.state = 42
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==JSONParser.T__1:
-                    self.state = 33
+                    self.state = 37
                     self.match(JSONParser.T__1)
-                    self.state = 34
-                    self.value()
+                    p('-')
                     self.state = 39
+                    self.value()
+                    self.state = 44
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 40
+                self.state = 45
                 self.match(JSONParser.T__5)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 42
+                self.state = 47
                 self.match(JSONParser.T__4)
-                self.state = 43
+                self.state = 48
                 self.match(JSONParser.T__5)
                 pass
 
@@ -320,6 +330,8 @@ class JSONParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self._STRING = None # Token
+            self._NUMBER = None # Token
 
         def STRING(self):
             return self.getToken(JSONParser.STRING, 0)
@@ -354,42 +366,44 @@ class JSONParser ( Parser ):
         localctx = JSONParser.ValueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_value)
         try:
-            self.state = 53
+            self.state = 60
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [JSONParser.STRING]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 46
-                self.match(JSONParser.STRING)
+                self.state = 51
+                localctx._STRING = self.match(JSONParser.STRING)
+                p((None if localctx._STRING is None else localctx._STRING.text))
                 pass
             elif token in [JSONParser.NUMBER]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 47
-                self.match(JSONParser.NUMBER)
+                self.state = 53
+                localctx._NUMBER = self.match(JSONParser.NUMBER)
+                p((None if localctx._NUMBER is None else localctx._NUMBER.text))
                 pass
             elif token in [JSONParser.T__0]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 48
+                self.state = 55
                 self.obj()
                 pass
             elif token in [JSONParser.T__4]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 49
+                self.state = 56
                 self.array()
                 pass
             elif token in [JSONParser.T__6]:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 50
+                self.state = 57
                 self.match(JSONParser.T__6)
                 pass
             elif token in [JSONParser.T__7]:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 51
+                self.state = 58
                 self.match(JSONParser.T__7)
                 pass
             elif token in [JSONParser.T__8]:
                 self.enterOuterAlt(localctx, 7)
-                self.state = 52
+                self.state = 59
                 self.match(JSONParser.T__8)
                 pass
             else:

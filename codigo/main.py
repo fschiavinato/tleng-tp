@@ -1,15 +1,16 @@
 import sys
+import io
 from antlr4 import *
 from JSONLexer import JSONLexer
 from JSONParser import JSONParser
  
-def main(argv):
-    input = sys.stdin.read()
-    print('original:\n' + input)
+def traducir(json_text):
+    input = InputStream(json_text)
     lexer = JSONLexer(input)
     stream = CommonTokenStream(lexer)
     parser = JSONParser(stream)
-    tree = parser.obj()
+    tree = parser.json()
  
 if __name__ == '__main__':
-    main(sys.argv)
+    json = open('ejemplo.json').read()
+    traducir(json)

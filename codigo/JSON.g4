@@ -1,26 +1,29 @@
 grammar JSON;
+@header {
+p = lambda x: print(x, end = '')
+}
 
 json
-   : value
+   :  value
    ;
 
 obj
-   : '{' pair (',' pair)* '}'
-   | '{' '}'
+   : '{' pair (',' pair)* '}' {print('')} 
+   | '{' '}' {p('{}')}
    ;
 
 pair
-   : STRING ':' value
+   : STRING ':' {p($STRING.text); p(':')} value
    ;
 
 array
-   : '[' value (',' value)* ']'
+   : {p('-')} '[' value (','{p('-')} value)* ']'
    | '[' ']'
    ;
 
 value
-   : STRING
-   | NUMBER
+   : STRING {p($STRING.text)}
+   | NUMBER {p($NUMBER.text)}
    | obj
    | array
    | 'true'
@@ -30,7 +33,7 @@ value
 
 
 STRING
-   : '"' (ESC | SAFECODEPOINT)* '"'
+   : '"' (ESC | SAFECODEPOINT)* '"' 
    ;
 
 
