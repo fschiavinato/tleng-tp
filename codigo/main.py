@@ -12,5 +12,6 @@ def traducir(json_text):
     tree = parser.json()
  
 if __name__ == '__main__':
-    json = open('ejemplo.json').read()
+    # json = open('ejemplo.json').read()
+    json = sys.stdin.read()
     traducir(json)

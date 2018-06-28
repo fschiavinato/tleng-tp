@@ -5,6 +5,12 @@ if __name__ is not None and "." in __name__:
 else:
     from JSONParser import JSONParser
 
+def putval(x):
+    x = x.replace('\"', '')
+    if ':' in x or '-' in x or '\\n' in x:
+        x = '\"' + x + '\"'
+    print(x, end = '')
+
 def put(x):
     print(x, end = '')
 
@@ -27,6 +33,15 @@ class JSONListener(ParseTreeListener):
 
     # Exit a parse tree produced by JSONParser#obj.
     def exitObj(self, ctx:JSONParser.ObjContext):
+        pass
+
+
+    # Enter a parse tree produced by JSONParser#emptyobj.
+    def enterEmptyobj(self, ctx:JSONParser.EmptyobjContext):
+        pass
+
+    # Exit a parse tree produced by JSONParser#emptyobj.
+    def exitEmptyobj(self, ctx:JSONParser.EmptyobjContext):
         pass
 
 
@@ -57,12 +72,39 @@ class JSONListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by JSONParser#emptyarray.
+    def enterEmptyarray(self, ctx:JSONParser.EmptyarrayContext):
+        pass
+
+    # Exit a parse tree produced by JSONParser#emptyarray.
+    def exitEmptyarray(self, ctx:JSONParser.EmptyarrayContext):
+        pass
+
+
     # Enter a parse tree produced by JSONParser#elements.
     def enterElements(self, ctx:JSONParser.ElementsContext):
         pass
 
     # Exit a parse tree produced by JSONParser#elements.
     def exitElements(self, ctx:JSONParser.ElementsContext):
+        pass
+
+
+    # Enter a parse tree produced by JSONParser#simplevalue.
+    def enterSimplevalue(self, ctx:JSONParser.SimplevalueContext):
+        pass
+
+    # Exit a parse tree produced by JSONParser#simplevalue.
+    def exitSimplevalue(self, ctx:JSONParser.SimplevalueContext):
+        pass
+
+
+    # Enter a parse tree produced by JSONParser#compoundvalue.
+    def enterCompoundvalue(self, ctx:JSONParser.CompoundvalueContext):
+        pass
+
+    # Exit a parse tree produced by JSONParser#compoundvalue.
+    def exitCompoundvalue(self, ctx:JSONParser.CompoundvalueContext):
         pass
 
 

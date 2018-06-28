@@ -5,6 +5,12 @@ from typing.io import TextIO
 import sys
 
 
+def putval(x):
+    x = x.replace('\"', '')
+    if ':' in x or '-' in x or '\\n' in x:
+        x = '\"' + x + '\"'
+    print(x, end = '')
+
 def put(x):
     print(x, end = '')
 
