@@ -1,39 +1,43 @@
 grammar JSON;
-
 @header {
 def p(x):
-    print(x, end = '')
+    if newline:
+        print(ident*' ', end = '')
+        newline = False
+    if '\n' in x:
+        x = x.split('\n', 1)
+        print(x[0], end = '')
+        newline = True
+        if x[1] != '':
+            p(x[1])
+    else:
+        print(x, end = '')
+}
+
+@members {
+ident = 0
+newline = True
 }
 
 json
-   :  {$value.level = 0} value 
+   :  value
    ;
 
-obj[level]
-   : '{' {$members.level = $level} members '}' {p('\n')} 
+obj
+   : '{' pair (',' pair)* '}' {ident += 2; p('\n')} 
    | '{' '}' {p('{}')}
    ;
 
-members[level]
-   : pair
-   | pair ',' members  
+pair
+   : STRING ':' {p($STRING.text); p(':')} value
    ;
 
-pair[level]
-   : STRING {p($STRING.text)} ':' {p($STRING.text); p(':'); $value.level = $level + 1} value
-   ;
-
-array[level]
-   : {p('-')} '[' elements ']' {$elements.level = $level}
+array
+   : {p('-')} '[' value (','{p('-')} value)* ']'
    | '[' ']'
    ;
 
-elements[level]
-   : value
-   | value ',' elements
-   ;
-
-value[level]
+value
    : STRING {p($STRING.text)}
    | NUMBER {p($NUMBER.text)}
    | obj

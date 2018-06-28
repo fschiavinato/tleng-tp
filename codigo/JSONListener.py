@@ -5,7 +5,8 @@ if __name__ is not None and "." in __name__:
 else:
     from JSONParser import JSONParser
 
-p = lambda x: print(x, end = '')
+def p(x):
+    print(x, end = '')
 
 
 # This class defines a complete listener for a parse tree produced by JSONParser.

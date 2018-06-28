@@ -5,7 +5,8 @@ from typing.io import TextIO
 import sys
 
 
-p = lambda x: print(x, end = '')
+def p(x):
+    print(x, end = '')
 
 
 def serializedATN():
@@ -33,7 +34,7 @@ def serializedATN():
         buf.write("\2\2\17\63\3\2\2\2\218\3\2\2\2\23>\3\2\2\2\25C\3\2\2\2")
         buf.write("\27M\3\2\2\2\31R\3\2\2\2\33X\3\2\2\2\35Z\3\2\2\2\37]\3")
         buf.write("\2\2\2!s\3\2\2\2#u\3\2\2\2%|\3\2\2\2\'(\7}\2\2(\4\3\2")
-        buf.write("\2\2)*\7.\2\2*\6\3\2\2\2+,\7\177\2\2,\b\3\2\2\2-.\7<\2")
+        buf.write("\2\2)*\7\177\2\2*\6\3\2\2\2+,\7.\2\2,\b\3\2\2\2-.\7<\2")
         buf.write("\2.\n\3\2\2\2/\60\7]\2\2\60\f\3\2\2\2\61\62\7_\2\2\62")
         buf.write("\16\3\2\2\2\63\64\7v\2\2\64\65\7t\2\2\65\66\7w\2\2\66")
         buf.write("\67\7g\2\2\67\20\3\2\2\289\7h\2\29:\7c\2\2:;\7n\2\2;<")
@@ -81,7 +82,7 @@ class JSONLexer(Lexer):
     modeNames = [ "DEFAULT_MODE" ]
 
     literalNames = [ "<INVALID>",
-            "'{'", "','", "'}'", "':'", "'['", "']'", "'true'", "'false'", 
+            "'{'", "'}'", "','", "':'", "'['", "']'", "'true'", "'false'", 
             "'null'" ]
 
     symbolicNames = [ "<INVALID>",
