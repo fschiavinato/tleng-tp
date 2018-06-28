@@ -1,46 +1,46 @@
 grammar JSON;
 
 @header {
-def p(x):
+def put(x):
     print(x, end = '')
 }
 
 json
-   :  {$value.level = 0} value 
+   :  value[0] 
    ;
 
 obj[level]
-   : '{' {$members.level = $level} members '}' {p('\n')} 
-   | '{' '}' {p('{}')}
+   : '{' members[$level] '}' {put('\n')} 
+   | '{' '}' {put('{}')}
    ;
 
 members[level]
-   : pair
-   | pair ',' members  
+   : pair[$level]
+   | pair[$level] ',' members[$level]  
    ;
 
 pair[level]
-   : STRING {p($STRING.text)} ':' {p($STRING.text); p(':'); $value.level = $level + 1} value
+   : STRING {put($STRING.text)} ':' {put($STRING.text); put(':')} value[$level+1]
    ;
 
 array[level]
-   : {p('-')} '[' elements ']' {$elements.level = $level}
+   : {put('-')} '[' elements[$level+1] ']'
    | '[' ']'
    ;
 
 elements[level]
-   : value
-   | value ',' elements
+   : value[$level]
+   | value[$level] ',' elements[$level]
    ;
 
 value[level]
-   : STRING {p($STRING.text)}
-   | NUMBER {p($NUMBER.text)}
-   | obj
-   | array
-   | 'true' {p('true')}
-   | 'false' {p('false')}
-   | 'null' {p('null')}
+   : STRING {put($STRING.text)}
+   | NUMBER {put($NUMBER.text)}
+   | obj[$level]
+   | array[$level]
+   | 'true' {put('true')}
+   | 'false' {put('false')}
+   | 'null' {put('null')}
    ;
 
 

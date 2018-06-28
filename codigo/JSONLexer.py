@@ -5,7 +5,7 @@ from typing.io import TextIO
 import sys
 
 
-def p(x):
+def put(x):
     print(x, end = '')
 
 

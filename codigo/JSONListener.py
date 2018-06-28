@@ -5,7 +5,7 @@ if __name__ is not None and "." in __name__:
 else:
     from JSONParser import JSONParser
 
-def p(x):
+def put(x):
     print(x, end = '')
 
 
@@ -30,6 +30,15 @@ class JSONListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by JSONParser#members.
+    def enterMembers(self, ctx:JSONParser.MembersContext):
+        pass
+
+    # Exit a parse tree produced by JSONParser#members.
+    def exitMembers(self, ctx:JSONParser.MembersContext):
+        pass
+
+
     # Enter a parse tree produced by JSONParser#pair.
     def enterPair(self, ctx:JSONParser.PairContext):
         pass
@@ -45,6 +54,15 @@ class JSONListener(ParseTreeListener):
 
     # Exit a parse tree produced by JSONParser#array.
     def exitArray(self, ctx:JSONParser.ArrayContext):
+        pass
+
+
+    # Enter a parse tree produced by JSONParser#elements.
+    def enterElements(self, ctx:JSONParser.ElementsContext):
+        pass
+
+    # Exit a parse tree produced by JSONParser#elements.
+    def exitElements(self, ctx:JSONParser.ElementsContext):
         pass
 
 

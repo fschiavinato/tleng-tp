@@ -6,35 +6,35 @@ from typing.io import TextIO
 import sys
 
 
-def p(x):
+def put(x):
     print(x, end = '')
 
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16")
-        buf.write("F\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2")
-        buf.write("\3\3\3\3\3\3\3\3\7\3\24\n\3\f\3\16\3\27\13\3\3\3\3\3\3")
-        buf.write("\3\3\3\3\3\3\3\5\3\37\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\5")
-        buf.write("\3\5\3\5\3\5\3\5\3\5\7\5-\n\5\f\5\16\5\60\13\5\3\5\3\5")
-        buf.write("\3\5\3\5\5\5\66\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3")
-        buf.write("\6\3\6\3\6\3\6\5\6D\n\6\3\6\2\2\7\2\4\6\b\n\2\2\2J\2\f")
-        buf.write("\3\2\2\2\4\36\3\2\2\2\6 \3\2\2\2\b\65\3\2\2\2\nC\3\2\2")
-        buf.write("\2\f\r\5\n\6\2\r\16\b\2\1\2\16\3\3\2\2\2\17\20\7\3\2\2")
-        buf.write("\20\25\5\6\4\2\21\22\7\4\2\2\22\24\5\6\4\2\23\21\3\2\2")
-        buf.write("\2\24\27\3\2\2\2\25\23\3\2\2\2\25\26\3\2\2\2\26\30\3\2")
-        buf.write("\2\2\27\25\3\2\2\2\30\31\7\5\2\2\31\32\b\3\1\2\32\37\3")
-        buf.write("\2\2\2\33\34\7\3\2\2\34\35\7\5\2\2\35\37\b\3\1\2\36\17")
-        buf.write("\3\2\2\2\36\33\3\2\2\2\37\5\3\2\2\2 !\7\f\2\2!\"\b\4\1")
-        buf.write("\2\"#\7\6\2\2#$\b\4\1\2$%\5\n\6\2%\7\3\2\2\2&\'\b\5\1")
-        buf.write("\2\'(\7\7\2\2(.\5\n\6\2)*\7\4\2\2*+\b\5\1\2+-\5\n\6\2")
-        buf.write(",)\3\2\2\2-\60\3\2\2\2.,\3\2\2\2./\3\2\2\2/\61\3\2\2\2")
-        buf.write("\60.\3\2\2\2\61\62\7\b\2\2\62\66\3\2\2\2\63\64\7\7\2\2")
-        buf.write("\64\66\7\b\2\2\65&\3\2\2\2\65\63\3\2\2\2\66\t\3\2\2\2")
-        buf.write("\678\7\f\2\28D\b\6\1\29:\7\r\2\2:D\b\6\1\2;D\5\4\3\2<")
-        buf.write("D\5\b\5\2=>\7\t\2\2>D\b\6\1\2?@\7\n\2\2@D\b\6\1\2AB\7")
-        buf.write("\13\2\2BD\b\6\1\2C\67\3\2\2\2C9\3\2\2\2C;\3\2\2\2C<\3")
-        buf.write("\2\2\2C=\3\2\2\2C?\3\2\2\2CA\3\2\2\2D\13\3\2\2\2\7\25")
-        buf.write("\36.\65C")
+        buf.write("H\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
+        buf.write("\t\b\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\33\n")
+        buf.write("\3\3\4\3\4\3\4\3\4\3\4\5\4\"\n\4\3\5\3\5\3\5\3\5\3\5\3")
+        buf.write("\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6\61\n\6\3\7\3\7\3\7")
+        buf.write("\3\7\3\7\5\78\n\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b")
+        buf.write("\3\b\3\b\3\b\5\bF\n\b\3\b\2\2\t\2\4\6\b\n\f\16\2\2\2J")
+        buf.write("\2\20\3\2\2\2\4\32\3\2\2\2\6!\3\2\2\2\b#\3\2\2\2\n\60")
+        buf.write("\3\2\2\2\f\67\3\2\2\2\16E\3\2\2\2\20\21\5\16\b\2\21\3")
+        buf.write("\3\2\2\2\22\23\7\3\2\2\23\24\5\6\4\2\24\25\7\4\2\2\25")
+        buf.write("\26\b\3\1\2\26\33\3\2\2\2\27\30\7\3\2\2\30\31\7\4\2\2")
+        buf.write("\31\33\b\3\1\2\32\22\3\2\2\2\32\27\3\2\2\2\33\5\3\2\2")
+        buf.write("\2\34\"\5\b\5\2\35\36\5\b\5\2\36\37\7\5\2\2\37 \5\6\4")
+        buf.write("\2 \"\3\2\2\2!\34\3\2\2\2!\35\3\2\2\2\"\7\3\2\2\2#$\7")
+        buf.write("\f\2\2$%\b\5\1\2%&\7\6\2\2&\'\b\5\1\2\'(\5\16\b\2(\t\3")
+        buf.write("\2\2\2)*\b\6\1\2*+\7\7\2\2+,\5\f\7\2,-\7\b\2\2-\61\3\2")
+        buf.write("\2\2./\7\7\2\2/\61\7\b\2\2\60)\3\2\2\2\60.\3\2\2\2\61")
+        buf.write("\13\3\2\2\2\628\5\16\b\2\63\64\5\16\b\2\64\65\7\5\2\2")
+        buf.write("\65\66\5\f\7\2\668\3\2\2\2\67\62\3\2\2\2\67\63\3\2\2\2")
+        buf.write("8\r\3\2\2\29:\7\f\2\2:F\b\b\1\2;<\7\r\2\2<F\b\b\1\2=F")
+        buf.write("\5\4\3\2>F\5\n\6\2?@\7\t\2\2@F\b\b\1\2AB\7\n\2\2BF\b\b")
+        buf.write("\1\2CD\7\13\2\2DF\b\b\1\2E9\3\2\2\2E;\3\2\2\2E=\3\2\2")
+        buf.write("\2E>\3\2\2\2E?\3\2\2\2EA\3\2\2\2EC\3\2\2\2F\17\3\2\2\2")
+        buf.write("\7\32!\60\67E")
         return buf.getvalue()
 
 
@@ -48,7 +48,7 @@ class JSONParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'{'", "','", "'}'", "':'", "'['", "']'", 
+    literalNames = [ "<INVALID>", "'{'", "'}'", "','", "':'", "'['", "']'", 
                      "'true'", "'false'", "'null'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -57,11 +57,14 @@ class JSONParser ( Parser ):
 
     RULE_json = 0
     RULE_obj = 1
-    RULE_pair = 2
-    RULE_array = 3
-    RULE_value = 4
+    RULE_members = 2
+    RULE_pair = 3
+    RULE_array = 4
+    RULE_elements = 5
+    RULE_value = 6
 
-    ruleNames =  [ "json", "obj", "pair", "array", "value" ]
+    ruleNames =  [ "json", "obj", "members", "pair", "array", "elements", 
+                   "value" ]
 
     EOF = Token.EOF
     T__0=1
@@ -90,7 +93,6 @@ class JSONParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self._value = None # ValueContext
 
         def value(self):
             return self.getTypedRuleContext(JSONParser.ValueContext,0)
@@ -116,9 +118,8 @@ class JSONParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_json)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 10
-            localctx._value = self.value()
-            localctx._value.level = 0
+            self.state = 14
+            self.value(0)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -129,17 +130,14 @@ class JSONParser ( Parser ):
 
     class ObjContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1, level=None):
             super().__init__(parent, invokingState)
             self.parser = parser
             self.level = None
-            self._pair = None # PairContext
+            self.level = level
 
-        def pair(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(JSONParser.PairContext)
-            else:
-                return self.getTypedRuleContext(JSONParser.PairContext,i)
+        def members(self):
+            return self.getTypedRuleContext(JSONParser.MembersContext,0)
 
 
         def getRuleIndex(self):
@@ -156,45 +154,95 @@ class JSONParser ( Parser ):
 
 
 
-    def obj(self):
+    def obj(self, level):
 
-        localctx = JSONParser.ObjContext(self, self._ctx, self.state)
+        localctx = JSONParser.ObjContext(self, self._ctx, self.state, level)
         self.enterRule(localctx, 2, self.RULE_obj)
-        self._la = 0 # Token type
         try:
-            self.state = 28
+            self.state = 24
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 13
+                self.state = 16
                 self.match(JSONParser.T__0)
-                self.state = 14
-                localctx._pair = self.pair()
-                self.state = 19
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                while _la==JSONParser.T__1:
-                    self.state = 15
-                    self.match(JSONParser.T__1)
-                    self.state = 16
-                    localctx._pair = self.pair()
-                    self.state = 21
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-
-                self.state = 22
-                self.match(JSONParser.T__2)
-                localctx._pair.level = localctx.level; p('\n')
+                self.state = 17
+                self.members(localctx.level)
+                self.state = 18
+                self.match(JSONParser.T__1)
+                put('\n')
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 25
+                self.state = 21
                 self.match(JSONParser.T__0)
+                self.state = 22
+                self.match(JSONParser.T__1)
+                put('{}')
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class MembersContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1, level=None):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+            self.level = None
+            self.level = level
+
+        def pair(self):
+            return self.getTypedRuleContext(JSONParser.PairContext,0)
+
+
+        def members(self):
+            return self.getTypedRuleContext(JSONParser.MembersContext,0)
+
+
+        def getRuleIndex(self):
+            return JSONParser.RULE_members
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterMembers" ):
+                listener.enterMembers(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitMembers" ):
+                listener.exitMembers(self)
+
+
+
+
+    def members(self, level):
+
+        localctx = JSONParser.MembersContext(self, self._ctx, self.state, level)
+        self.enterRule(localctx, 4, self.RULE_members)
+        try:
+            self.state = 31
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
                 self.state = 26
+                self.pair(localctx.level)
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 27
+                self.pair(localctx.level)
+                self.state = 28
                 self.match(JSONParser.T__2)
-                p('{}')
+                self.state = 29
+                self.members(localctx.level)
                 pass
 
 
@@ -208,12 +256,12 @@ class JSONParser ( Parser ):
 
     class PairContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1, level=None):
             super().__init__(parent, invokingState)
             self.parser = parser
             self.level = None
             self._STRING = None # Token
-            self._value = None # ValueContext
+            self.level = level
 
         def STRING(self):
             return self.getToken(JSONParser.STRING, 0)
@@ -236,20 +284,20 @@ class JSONParser ( Parser ):
 
 
 
-    def pair(self):
+    def pair(self, level):
 
-        localctx = JSONParser.PairContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 4, self.RULE_pair)
+        localctx = JSONParser.PairContext(self, self._ctx, self.state, level)
+        self.enterRule(localctx, 6, self.RULE_pair)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 30
+            self.state = 33
             localctx._STRING = self.match(JSONParser.STRING)
-            p((None if localctx._STRING is None else localctx._STRING.text))
-            self.state = 32
+            put((None if localctx._STRING is None else localctx._STRING.text))
+            self.state = 35
             self.match(JSONParser.T__3)
-            p((None if localctx._STRING is None else localctx._STRING.text)); p(':'); localctx._value.level = localctx.level + 1
-            self.state = 34
-            localctx._value = self.value()
+            put((None if localctx._STRING is None else localctx._STRING.text)); put(':')
+            self.state = 37
+            self.value(localctx.level+1)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -260,16 +308,14 @@ class JSONParser ( Parser ):
 
     class ArrayContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1, level=None):
             super().__init__(parent, invokingState)
             self.parser = parser
             self.level = None
+            self.level = level
 
-        def value(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(JSONParser.ValueContext)
-            else:
-                return self.getTypedRuleContext(JSONParser.ValueContext,i)
+        def elements(self):
+            return self.getTypedRuleContext(JSONParser.ElementsContext,0)
 
 
         def getRuleIndex(self):
@@ -286,45 +332,94 @@ class JSONParser ( Parser ):
 
 
 
-    def array(self):
+    def array(self, level):
 
-        localctx = JSONParser.ArrayContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 6, self.RULE_array)
-        self._la = 0 # Token type
+        localctx = JSONParser.ArrayContext(self, self._ctx, self.state, level)
+        self.enterRule(localctx, 8, self.RULE_array)
         try:
-            self.state = 51
+            self.state = 46
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                p('-')
-                self.state = 37
+                put('-')
+                self.state = 40
                 self.match(JSONParser.T__4)
-                self.state = 38
-                self.value()
-                self.state = 44
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                while _la==JSONParser.T__1:
-                    self.state = 39
-                    self.match(JSONParser.T__1)
-                    p('-')
-                    self.state = 41
-                    self.value()
-                    self.state = 46
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-
-                self.state = 47
+                self.state = 41
+                self.elements(localctx.level+1)
+                self.state = 42
                 self.match(JSONParser.T__5)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 49
+                self.state = 44
                 self.match(JSONParser.T__4)
-                self.state = 50
+                self.state = 45
                 self.match(JSONParser.T__5)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class ElementsContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1, level=None):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+            self.level = None
+            self.level = level
+
+        def value(self):
+            return self.getTypedRuleContext(JSONParser.ValueContext,0)
+
+
+        def elements(self):
+            return self.getTypedRuleContext(JSONParser.ElementsContext,0)
+
+
+        def getRuleIndex(self):
+            return JSONParser.RULE_elements
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterElements" ):
+                listener.enterElements(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitElements" ):
+                listener.exitElements(self)
+
+
+
+
+    def elements(self, level):
+
+        localctx = JSONParser.ElementsContext(self, self._ctx, self.state, level)
+        self.enterRule(localctx, 10, self.RULE_elements)
+        try:
+            self.state = 53
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 48
+                self.value(localctx.level)
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 49
+                self.value(localctx.level)
+                self.state = 50
+                self.match(JSONParser.T__2)
+                self.state = 51
+                self.elements(localctx.level)
                 pass
 
 
@@ -338,12 +433,13 @@ class JSONParser ( Parser ):
 
     class ValueContext(ParserRuleContext):
 
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1, level=None):
             super().__init__(parent, invokingState)
             self.parser = parser
             self.level = None
             self._STRING = None # Token
             self._NUMBER = None # Token
+            self.level = level
 
         def STRING(self):
             return self.getToken(JSONParser.STRING, 0)
@@ -373,53 +469,53 @@ class JSONParser ( Parser ):
 
 
 
-    def value(self):
+    def value(self, level):
 
-        localctx = JSONParser.ValueContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 8, self.RULE_value)
+        localctx = JSONParser.ValueContext(self, self._ctx, self.state, level)
+        self.enterRule(localctx, 12, self.RULE_value)
         try:
-            self.state = 65
+            self.state = 67
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [JSONParser.STRING]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 53
+                self.state = 55
                 localctx._STRING = self.match(JSONParser.STRING)
-                p((None if localctx._STRING is None else localctx._STRING.text))
+                put((None if localctx._STRING is None else localctx._STRING.text))
                 pass
             elif token in [JSONParser.NUMBER]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 55
+                self.state = 57
                 localctx._NUMBER = self.match(JSONParser.NUMBER)
-                p((None if localctx._NUMBER is None else localctx._NUMBER.text))
+                put((None if localctx._NUMBER is None else localctx._NUMBER.text))
                 pass
             elif token in [JSONParser.T__0]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 57
-                self.obj()
+                self.state = 59
+                self.obj(localctx.level)
                 pass
             elif token in [JSONParser.T__4]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 58
-                self.array()
+                self.state = 60
+                self.array(localctx.level)
                 pass
             elif token in [JSONParser.T__6]:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 59
+                self.state = 61
                 self.match(JSONParser.T__6)
-                p('true')
+                put('true')
                 pass
             elif token in [JSONParser.T__7]:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 61
+                self.state = 63
                 self.match(JSONParser.T__7)
-                p('false')
+                put('false')
                 pass
             elif token in [JSONParser.T__8]:
                 self.enterOuterAlt(localctx, 7)
-                self.state = 63
+                self.state = 65
                 self.match(JSONParser.T__8)
-                p('null')
+                put('null')
                 pass
             else:
                 raise NoViableAltException(self)
