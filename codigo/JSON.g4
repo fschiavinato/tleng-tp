@@ -23,14 +23,14 @@ emptyobj
    : '{' '}' {put('{}')}
    ;
 
-members[level] returns [claves]
-   : {put(level * '  ')} pair[$level]
-   | {put(level * '  ')} pair[$level] {put('\n')} ',' members[$level]  
+members[level] returns [keys]
+   : {put(level * '  ')} pair[$level] {$keys = {$pair.key: True}}
+   | {put(level * '  ')} pair[$level] {put('\n')} ',' members[$level]  {$pair.key not in $members.keys}? {$keys = $members.keys} {$keys[$pair.key] = True}
    ;
 
-pair[level]
-   : STRING ':' {putval($STRING.text); put(': ')} simplevalue[$level+1]
-   | STRING ':' {putval($STRING.text); put(':\n')} compoundvalue[$level+1]
+pair[level] returns [key]
+   : STRING ':' {putval($STRING.text); put(': ')} simplevalue[$level+1] {$key = $STRING.text}
+   | STRING ':' {putval($STRING.text); put(':\n')} compoundvalue[$level+1] {$key = $STRING.text}
    ;
 
 array[level]
