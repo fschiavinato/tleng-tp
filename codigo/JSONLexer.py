@@ -6,8 +6,10 @@ import sys
 
 
 def putval(x):
-    x = x.replace('\"', '')
-    if ':' in x or '-' in x or '\\n' in x:
+    specialchar = [':', '-', '\\n', '{', '}', '[', ']', ',', '&', '*', '#', '?', '|', '<', '>', '=', '!', '%', '@', '\\']
+    x = x.replace('\"', '', 1)
+    x = x[::-1].replace('\"', '', 1)[::-1]
+    if any([(c in x) for c in specialchar]):
         x = '\"' + x + '\"'
     print(x, end = '')
 
