@@ -6,7 +6,7 @@ else:
     from JSONParser import JSONParser
 
 def putval(x):
-    specialchar = [':', '-', '\\n', '{', '}', '[', ']', ',', '&', '*', '#', '?', '|', '<', '>', '=', '!', '%', '@', '\\']
+    specialchar = ['\'', ':', '-', '\\n', '{', '}', '[', ']', ',', '&', '*', '#', '?', '|', '<', '>', '=', '!', '%', '@', '\\']
     x = x.replace('\"', '', 1)
     x = x[::-1].replace('\"', '', 1)[::-1]
     if any([(c in x) for c in specialchar]):
